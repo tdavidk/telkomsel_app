@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:telkomsel_app/general/general_variables.dart';
-import 'package:telkomsel_app/pages/bot_nav_pages/home_page.dart';
+import 'package:telkomsel_app/pages/main_page.dart';
 
 class LoginVerificationPage extends StatefulWidget {
   @override
@@ -23,66 +23,79 @@ class _LoginVerificationPageState extends State<LoginVerificationPage> {
           },
           child: SingleChildScrollView(
             child: Container(
-              padding: EdgeInsets.symmetric(horizontal: GeneralVariables.defaultPadding),
+              padding: EdgeInsets.symmetric(
+                  horizontal: GeneralVariables.defaultPadding),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: 32,),
+                  SizedBox(
+                    height: 32,
+                  ),
                   Image.asset("assets/images/login1.png"),
-                  SizedBox(height: 46,),
-                  Text("Masukan kode unik yang kami kirim",
+                  SizedBox(
+                    height: 46,
+                  ),
+                  Text(
+                    "Masukan kode unik yang kami kirim",
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
-                  SizedBox(height: 12,),
+                  SizedBox(
+                    height: 12,
+                  ),
                   RichText(
                     text: TextSpan(
-                      text: "Silahkan periksa SMS kamu dan masukan kode unik yang kami kirimkan ke ",
-                      style: TextStyle(
-                        color: GeneralVariables.blackColor,
-                        fontSize: 14,
-                      ),
-                      children: [
-                        TextSpan(
-                          text: "081290112333",
-                          style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                          )
-                        )
-                      ]
-                    ),
+                        text:
+                            "Silahkan periksa SMS kamu dan masukan kode unik yang kami kirimkan ke ",
+                        style: TextStyle(
+                          color: GeneralVariables.blackColor,
+                          fontSize: 14,
+                        ),
+                        children: [
+                          TextSpan(
+                              text: "081290112333",
+                              style: TextStyle(
+                                fontWeight: FontWeight.w600,
+                              ))
+                        ]),
                   ),
-                  SizedBox(height: 24,),
-                  Text("Kode Unik",
+                  SizedBox(
+                    height: 24,
+                  ),
+                  Text(
+                    "Kode Unik",
                     style: TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
-                  SizedBox(height: 8,),
+                  SizedBox(
+                    height: 8,
+                  ),
                   TextField(
                     controller: verificationController,
                     keyboardType: TextInputType.number,
-                    style: TextStyle(
-                      fontSize: 14
-                    ),
+                    style: TextStyle(fontSize: 14),
                     decoration: InputDecoration(
                       isDense: true,
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(4),
-                          borderSide: BorderSide(color: GeneralVariables.borderTextFieldColor)
-                      ),
+                          borderSide: BorderSide(
+                              color: GeneralVariables.borderTextFieldColor)),
                       hintText: "Cth. q5Tsgh***",
                     ),
                     onSubmitted: (value) {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) {
-                        return HomePage();
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return MainPage();
                       }));
                     },
                   ),
-                  SizedBox(height: 16,),
+                  SizedBox(
+                    height: 16,
+                  ),
                   RichText(
                     text: TextSpan(
                         text: "Tidak menerima SMS ? ",
@@ -94,19 +107,19 @@ class _LoginVerificationPageState extends State<LoginVerificationPage> {
                           TextSpan(
                               text: "Kirim ulang",
                               style: TextStyle(
-                                fontWeight: FontWeight.w600,
-                                color: GeneralVariables.primaryRedColor
-                              )
-                          )
-                        ]
-                    ),
+                                  fontWeight: FontWeight.w600,
+                                  color: GeneralVariables.primaryRedColor))
+                        ]),
                   ),
-                  SizedBox(height: 32,),
+                  SizedBox(
+                    height: 32,
+                  ),
                   Container(
                     width: size.width,
                     height: 42,
                     child: ElevatedButton(
-                      child: Text("Kirim",
+                      child: Text(
+                        "Kirim",
                         style: TextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.bold,
@@ -117,8 +130,9 @@ class _LoginVerificationPageState extends State<LoginVerificationPage> {
                         primary: GeneralVariables.primaryRedColor,
                       ),
                       onPressed: () {
-                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
-                          return HomePage();
+                        Navigator.pushReplacement(context,
+                            MaterialPageRoute(builder: (context) {
+                          return MainPage();
                         }));
                       },
                     ),

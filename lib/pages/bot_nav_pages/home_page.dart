@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:telkomsel_app/general/general_variables.dart';
@@ -8,6 +9,39 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  List imageCategoryPackage1 = [
+    "assets/images/kategori1.png",
+    "assets/images/kategori2.png",
+    "assets/images/kategori3.png",
+    "assets/images/kategori4.png",
+  ];
+
+  List nameCategoryPackage1 = [
+    "Internet",
+    "Telpon",
+    "SMS",
+    "Roaming",
+  ];
+
+  List imageCategoryPackage2 = [
+    "assets/images/kategori5.png",
+    "assets/images/kategori6.png",
+    "assets/images/kategori7.png",
+    "assets/images/kategori8.png",
+  ];
+
+  List nameCategoryPackage2 = [
+    "Hiburan",
+    "Unggulan",
+    "Tersimpan",
+    "Riwayat",
+  ];
+
+  List imageNewFromTelkomsel = [
+    "assets/images/terbaru1.png",
+    "assets/images/terbaru2.png",
+  ];
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -17,27 +51,23 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: GeneralVariables.primaryRedColor,
         title: RichText(
           text: TextSpan(
-            text: "Hai, ",
-            style: TextStyle(
-              fontSize: 20,
-              color: GeneralVariables.whiteColor,
-            ),
-            children: [
-              TextSpan(
-                text: "David",
-                style: TextStyle(
-                  fontWeight: FontWeight.w600,
-                )
+              text: "Hai, ",
+              style: TextStyle(
+                fontSize: 20,
+                color: GeneralVariables.whiteColor,
               ),
-            ]
-          ),
+              children: [
+                TextSpan(
+                    text: "David",
+                    style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                    )),
+              ]),
         ),
         actions: [
           Container(
             padding: EdgeInsets.only(right: 20),
-            child: SvgPicture.asset(
-              "assets/icons/qrcode.svg"
-            ),
+            child: SvgPicture.asset("assets/icons/qrcode.svg"),
           )
         ],
         elevation: 0,
@@ -58,88 +88,92 @@ class _HomePageState extends State<HomePage> {
                   width: size.width,
                   height: 150,
                   decoration: BoxDecoration(
-                    color: GeneralVariables.primaryRedColor,
-                    borderRadius: BorderRadius.vertical(
-                      bottom: Radius.elliptical(1000,250),
-                    )
-                  ),
+                      color: GeneralVariables.primaryRedColor,
+                      borderRadius: BorderRadius.vertical(
+                        bottom: Radius.elliptical(1000, 250),
+                      )),
                 ),
                 Container(
                   width: size.width,
                   height: 205,
-                  margin: EdgeInsets.symmetric(horizontal: GeneralVariables.defaultPadding),
+                  margin: EdgeInsets.symmetric(
+                      horizontal: GeneralVariables.defaultPadding),
                   decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage("assets/images/simcard.png"),
-                      fit: BoxFit.fill
-                    )
-                  ),
+                      image: DecorationImage(
+                          image: AssetImage("assets/images/simcard.png"),
+                          fit: BoxFit.fill)),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      SizedBox(height: 16,),
+                      SizedBox(
+                        height: 16,
+                      ),
                       Container(
-                        padding: EdgeInsets.symmetric(horizontal: GeneralVariables.defaultPadding),
+                        padding: EdgeInsets.symmetric(
+                            horizontal: GeneralVariables.defaultPadding),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text("081290112333",
+                            Text(
+                              "081290112333",
                               style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w600,
-                                color: GeneralVariables.whiteColor
-                              ),
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w600,
+                                  color: GeneralVariables.whiteColor),
                             ),
                             Container(
                               width: 84,
                               height: 15,
                               decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: AssetImage("assets/images/simpati_logo.png"),
-                                  fit: BoxFit.contain
-                                )
-                              ),
+                                  image: DecorationImage(
+                                      image: AssetImage(
+                                          "assets/images/simpati_logo.png"),
+                                      fit: BoxFit.contain)),
                             )
                           ],
                         ),
                       ),
-                      SizedBox(height: 21,),
+                      SizedBox(
+                        height: 21,
+                      ),
                       Container(
-                        padding: EdgeInsets.symmetric(horizontal: GeneralVariables.defaultPadding),
+                        padding: EdgeInsets.symmetric(
+                            horizontal: GeneralVariables.defaultPadding),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text("Sisa Pulsa Anda",
+                            Text(
+                              "Sisa Pulsa Anda",
                               style: TextStyle(
                                   fontSize: 18,
                                   fontWeight: FontWeight.w500,
-                                  color: GeneralVariables.whiteColor
-                              ),
+                                  color: GeneralVariables.whiteColor),
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text("Rp 34.000",
+                                Text(
+                                  "Rp 34.000",
                                   style: TextStyle(
                                       fontSize: 24,
                                       fontWeight: FontWeight.w600,
-                                      color: GeneralVariables.whiteColor
-                                  ),
+                                      color: GeneralVariables.whiteColor),
                                 ),
                                 ElevatedButton(
-                                  child: Text("Isi Pulsa",
+                                  child: Text(
+                                    "Isi Pulsa",
                                     style: TextStyle(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w500,
-                                      color: GeneralVariables.blackColor
-                                    ),
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w500,
+                                        color: GeneralVariables.blackColor),
                                   ),
                                   style: ElevatedButton.styleFrom(
                                     elevation: 0,
                                     primary: GeneralVariables.yellowColor,
                                   ),
                                   onPressed: () {
-                                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
+                                    Navigator.pushReplacement(context,
+                                        MaterialPageRoute(builder: (context) {
                                       return HomePage();
                                     }));
                                   },
@@ -149,14 +183,18 @@ class _HomePageState extends State<HomePage> {
                           ],
                         ),
                       ),
-                      SizedBox(height: 12,),
+                      SizedBox(
+                        height: 12,
+                      ),
                       Container(
                         width: size.width,
                         height: 0.2,
                         color: GeneralVariables.blackColor,
                       ),
                       Container(
-                        padding: EdgeInsets.symmetric(horizontal: GeneralVariables.defaultPadding, vertical: 12),
+                        padding: EdgeInsets.symmetric(
+                            horizontal: GeneralVariables.defaultPadding,
+                            vertical: 12),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -172,34 +210,35 @@ class _HomePageState extends State<HomePage> {
                                         text: "25 Desember 2021",
                                         style: TextStyle(
                                           fontWeight: FontWeight.w600,
-                                        )
-                                    ),
-                                  ]
-                              ),
+                                        )),
+                                  ]),
                             ),
-                            SizedBox(height: 4,),
+                            SizedBox(
+                              height: 4,
+                            ),
                             Row(
                               children: [
-                                Text("Telksomsel POIN",
+                                Text(
+                                  "Telksomsel POIN",
                                   style: TextStyle(
                                       fontSize: 18,
                                       fontWeight: FontWeight.w600,
-                                      color: GeneralVariables.whiteColor
-                                  ),
+                                      color: GeneralVariables.whiteColor),
                                 ),
-                                SizedBox(width: 4,),
+                                SizedBox(
+                                  width: 4,
+                                ),
                                 Container(
                                   padding: EdgeInsets.symmetric(horizontal: 4),
                                   decoration: BoxDecoration(
-                                    color: GeneralVariables.yellowColor,
-                                    borderRadius: BorderRadius.circular(4)
-                                  ),
-                                  child: Text("172",
+                                      color: GeneralVariables.yellowColor,
+                                      borderRadius: BorderRadius.circular(4)),
+                                  child: Text(
+                                    "172",
                                     style: TextStyle(
                                         fontSize: 18,
                                         fontWeight: FontWeight.w600,
-                                        color: GeneralVariables.blackColor
-                                    ),
+                                        color: GeneralVariables.blackColor),
                                   ),
                                 ),
                               ],
@@ -207,26 +246,30 @@ class _HomePageState extends State<HomePage> {
                           ],
                         ),
                       ),
-
                     ],
                   ),
                 )
               ],
             ),
-            SizedBox(height: 12,),
+            SizedBox(
+              height: 12,
+            ),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: GeneralVariables.defaultPadding),
+              padding: EdgeInsets.symmetric(
+                  horizontal: GeneralVariables.defaultPadding),
               child: Row(
                 children: [
                   Expanded(
                     child: Container(
-                      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 10, vertical: 8),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(4),
                         color: GeneralVariables.whiteColor,
                         boxShadow: [
                           BoxShadow(
-                            color: GeneralVariables.shadowColor.withOpacity(0.13),
+                            color:
+                                GeneralVariables.shadowColor.withOpacity(0.13),
                             spreadRadius: 0,
                             blurRadius: 16,
                             offset: Offset(0, 2), // changes position of shadow
@@ -236,30 +279,32 @@ class _HomePageState extends State<HomePage> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text("Internet",
+                          Text(
+                            "Internet",
                             style: TextStyle(
                                 fontSize: 13,
                                 fontWeight: FontWeight.w400,
-                                color: GeneralVariables.blackColor
-                            ),
+                                color: GeneralVariables.blackColor),
                           ),
-                          SizedBox(height: 4,),
+                          SizedBox(
+                            height: 4,
+                          ),
                           Row(
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
-                              Text("12.19",
+                              Text(
+                                "12.19",
                                 style: TextStyle(
                                     fontSize: 24,
                                     fontWeight: FontWeight.w600,
-                                    color: GeneralVariables.primaryRedColor
-                                ),
+                                    color: GeneralVariables.primaryRedColor),
                               ),
-                              Text(" GB",
+                              Text(
+                                " GB",
                                 style: TextStyle(
                                     fontSize: 14,
                                     fontWeight: FontWeight.w400,
-                                    color: GeneralVariables.darkGreyColor
-                                ),
+                                    color: GeneralVariables.darkGreyColor),
                               ),
                             ],
                           )
@@ -267,16 +312,20 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                   ),
-                  SizedBox(width: 16,),
+                  SizedBox(
+                    width: 16,
+                  ),
                   Expanded(
                     child: Container(
-                      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 10, vertical: 8),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(4),
                         color: GeneralVariables.whiteColor,
                         boxShadow: [
                           BoxShadow(
-                            color: GeneralVariables.shadowColor.withOpacity(0.13),
+                            color:
+                                GeneralVariables.shadowColor.withOpacity(0.13),
                             spreadRadius: 0,
                             blurRadius: 16,
                             offset: Offset(0, 2), // changes position of shadow
@@ -286,30 +335,32 @@ class _HomePageState extends State<HomePage> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text("Telpon",
+                          Text(
+                            "Telpon",
                             style: TextStyle(
                                 fontSize: 13,
                                 fontWeight: FontWeight.w400,
-                                color: GeneralVariables.blackColor
-                            ),
+                                color: GeneralVariables.blackColor),
                           ),
-                          SizedBox(height: 4,),
+                          SizedBox(
+                            height: 4,
+                          ),
                           Row(
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
-                              Text("0",
+                              Text(
+                                "0",
                                 style: TextStyle(
                                     fontSize: 24,
                                     fontWeight: FontWeight.w600,
-                                    color: GeneralVariables.primaryRedColor
-                                ),
+                                    color: GeneralVariables.primaryRedColor),
                               ),
-                              Text(" Min",
+                              Text(
+                                " Min",
                                 style: TextStyle(
                                     fontSize: 14,
                                     fontWeight: FontWeight.w400,
-                                    color: GeneralVariables.darkGreyColor
-                                ),
+                                    color: GeneralVariables.darkGreyColor),
                               ),
                             ],
                           )
@@ -317,16 +368,20 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                   ),
-                  SizedBox(width: 16,),
+                  SizedBox(
+                    width: 16,
+                  ),
                   Expanded(
                     child: Container(
-                      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 10, vertical: 8),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(4),
                         color: GeneralVariables.whiteColor,
                         boxShadow: [
                           BoxShadow(
-                            color: GeneralVariables.shadowColor.withOpacity(0.13),
+                            color:
+                                GeneralVariables.shadowColor.withOpacity(0.13),
                             spreadRadius: 0,
                             blurRadius: 16,
                             offset: Offset(0, 2), // changes position of shadow
@@ -336,30 +391,32 @@ class _HomePageState extends State<HomePage> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text("SMS",
+                          Text(
+                            "SMS",
                             style: TextStyle(
                                 fontSize: 13,
                                 fontWeight: FontWeight.w400,
-                                color: GeneralVariables.blackColor
-                            ),
+                                color: GeneralVariables.blackColor),
                           ),
-                          SizedBox(height: 4,),
+                          SizedBox(
+                            height: 4,
+                          ),
                           Row(
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
-                              Text("23",
+                              Text(
+                                "23",
                                 style: TextStyle(
                                     fontSize: 24,
                                     fontWeight: FontWeight.w600,
-                                    color: GeneralVariables.primaryRedColor
-                                ),
+                                    color: GeneralVariables.primaryRedColor),
                               ),
-                              Text(" SMS",
+                              Text(
+                                " SMS",
                                 style: TextStyle(
                                     fontSize: 14,
                                     fontWeight: FontWeight.w400,
-                                    color: GeneralVariables.darkGreyColor
-                                ),
+                                    color: GeneralVariables.darkGreyColor),
                               ),
                             ],
                           )
@@ -370,23 +427,162 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-            SizedBox(height: 25,),
+            SizedBox(
+              height: 25,
+            ),
             Container(
               width: size.width,
               height: 8,
               color: GeneralVariables.greyColor,
             ),
-            SizedBox(height: 20,),
+            SizedBox(
+              height: 20,
+            ),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: GeneralVariables.defaultPadding),
-              child: Text("Kategori Paket",
-                style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600,
-                    color: GeneralVariables.blackColor
-                ),
+              padding: EdgeInsets.symmetric(
+                  horizontal: GeneralVariables.defaultPadding),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Kategori Paket",
+                    style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                        color: GeneralVariables.blackColor),
+                  ),
+                  SizedBox(
+                    height: 8,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children:
+                        List.generate(imageCategoryPackage1.length, (index) {
+                      return Container(
+                        padding: EdgeInsets.only(top: 11, left: 11, right: 11),
+                        child: Column(
+                          children: [
+                            Container(
+                              width: 53,
+                              height: 53,
+                              decoration: BoxDecoration(
+                                color: GeneralVariables.yellowColor
+                                    .withOpacity(0.2),
+                                shape: BoxShape.circle,
+                              ),
+                              child: Image.asset(imageCategoryPackage1[index]),
+                            ),
+                            SizedBox(
+                              height: 8,
+                            ),
+                            Text(
+                              nameCategoryPackage1[index],
+                              style: TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w500,
+                                  color: GeneralVariables.blackColor),
+                            ),
+                          ],
+                        ),
+                      );
+                    }),
+                  ),
+                  SizedBox(
+                    height: 12,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children:
+                        List.generate(imageCategoryPackage2.length, (index) {
+                      return Container(
+                        padding: EdgeInsets.only(top: 11, left: 11, right: 11),
+                        child: Column(
+                          children: [
+                            Container(
+                              width: 53,
+                              height: 53,
+                              decoration: BoxDecoration(
+                                color: GeneralVariables.yellowColor
+                                    .withOpacity(0.2),
+                                shape: BoxShape.circle,
+                              ),
+                              child: Image.asset(imageCategoryPackage2[index]),
+                            ),
+                            SizedBox(
+                              height: 8,
+                            ),
+                            Text(
+                              nameCategoryPackage2[index],
+                              style: TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w500,
+                                  color: GeneralVariables.blackColor),
+                            ),
+                          ],
+                        ),
+                      );
+                    }),
+                  ),
+                ],
               ),
             ),
+            SizedBox(
+              height: 32,
+            ),
+            Container(
+              padding: EdgeInsets.symmetric(
+                  horizontal: GeneralVariables.defaultPadding),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Terbaru dari Telkomsel",
+                    style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                        color: GeneralVariables.blackColor),
+                  ),
+                  Text(
+                    "Lihat Semua",
+                    style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                        color: GeneralVariables.primaryRedColor),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: GeneralVariables.defaultPadding,
+            ),
+            Container(
+              height: 100,
+              child: ListView.builder(
+                shrinkWrap: true,
+                scrollDirection: Axis.horizontal,
+                itemCount: imageNewFromTelkomsel.length,
+                itemBuilder: (context, index) {
+                  return Row(
+                    children: [
+                      index == 0
+                          ? SizedBox(width: GeneralVariables.defaultPadding)
+                          : SizedBox(width: 12),
+                      Container(
+                        width: 248,
+                        height: 100,
+                        child: Image.asset(
+                          imageNewFromTelkomsel[index],
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                      index == imageNewFromTelkomsel.length - 1
+                          ? SizedBox(width: GeneralVariables.defaultPadding)
+                          : SizedBox(),
+                    ],
+                  );
+                },
+              ),
+            )
           ],
         ),
       ),

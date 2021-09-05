@@ -42,6 +42,48 @@ class _HomePageState extends State<HomePage> {
     "assets/images/terbaru2.png",
   ];
 
+  List imageTanggapCovid19 = [
+    "assets/images/tanggap_covid1.png",
+    "assets/images/tanggap_covid2.png",
+  ];
+
+  List textTanggapCovid19 = [
+    "Diskon Spesial 25% Untuk Pelanggan Baru",
+    "Bebas Kuota Akses Layanan Kesehatan",
+  ];
+
+  List imageLinkAja = [
+    "assets/images/linkaja1.png",
+    "assets/images/linkaja2.png",
+    "assets/images/linkaja3.png",
+  ];
+
+  List textLinkAja = [
+    "Bayar Serba Cepat",
+    "Cukup Snap QR",
+    "NO! Credit Card",
+  ];
+
+  List imageVocer = [
+    "assets/images/vocer1.png",
+    "assets/images/vocer2.png",
+  ];
+
+  List textVocer = [
+    "Double Benefits from DOUBLE UNTUNG",
+    "Join Undi-Undi Hepi 2020!",
+  ];
+
+  List imagePenawaran = [
+    "assets/images/penawaran1.png",
+    "assets/images/penawaran2.png",
+  ];
+
+  List textPenawaran = [
+    "Terus Belajar dari Rumahmu dengan Ruangguru!",
+    "Belajar Kini Makin Mudah dengan Paket ilmupedia!"
+  ];
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -172,10 +214,10 @@ class _HomePageState extends State<HomePage> {
                                     primary: GeneralVariables.yellowColor,
                                   ),
                                   onPressed: () {
-                                    Navigator.pushReplacement(context,
-                                        MaterialPageRoute(builder: (context) {
-                                      return HomePage();
-                                    }));
+                                    // Navigator.pushReplacement(context,
+                                    //     MaterialPageRoute(builder: (context) {
+                                    //   return HomePage();
+                                    // }));
                                   },
                                 ),
                               ],
@@ -572,7 +614,7 @@ class _HomePageState extends State<HomePage> {
                         height: 100,
                         child: Image.asset(
                           imageNewFromTelkomsel[index],
-                          fit: BoxFit.fill,
+                          fit: BoxFit.cover,
                         ),
                       ),
                       index == imageNewFromTelkomsel.length - 1
@@ -582,7 +624,324 @@ class _HomePageState extends State<HomePage> {
                   );
                 },
               ),
-            )
+            ),
+            SizedBox(
+              height: 32,
+            ),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: GeneralVariables.defaultPadding),
+              child: Text(
+                "Tanggap COVID-19",
+                style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                    color: GeneralVariables.blackColor),
+              ),
+            ),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              padding: EdgeInsets.only(top: 20, bottom: 32),
+              child: Row(
+                children: List.generate(imageTanggapCovid19.length, (index) {
+                  return Row(
+                    children: [
+                      index == 0
+                          ? SizedBox(width: GeneralVariables.defaultPadding)
+                          : SizedBox(width: 12),
+                      Container(
+                        width: 248,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(4),
+                          color: GeneralVariables.whiteColor,
+                          boxShadow: [
+                            BoxShadow(
+                              color:
+                              GeneralVariables.shadowColor.withOpacity(0.13),
+                              spreadRadius: 0,
+                              blurRadius: 16,
+                              offset: Offset(0, 2), // changes position of shadow
+                            ),
+                          ],
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              width: 248,
+                              height: 112,
+                              child: Image.asset(
+                                imageTanggapCovid19[index],
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                            Container(
+                              padding: EdgeInsets.all(12),
+                              child: Text(textTanggapCovid19[index],
+                                maxLines: 2,
+                                style: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w500,
+                                    color: GeneralVariables.blackColor
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                      index == imageTanggapCovid19.length - 1
+                          ? SizedBox(width: GeneralVariables.defaultPadding)
+                          : SizedBox(),
+                    ],
+                  );
+                }),
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: GeneralVariables.defaultPadding),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "AYO! Pake LinkAja!",
+                    style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                        color: GeneralVariables.blackColor),
+                  ),
+                  SizedBox(height: 8,),
+                  Text(
+                    "Pakai LinkAja untuk beli pulsa, beli paket data dan bayar tagihan lebih mudah.",
+                    style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                        color: GeneralVariables.blackColor),
+                  ),
+                ],
+              ),
+            ),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              padding: EdgeInsets.only(top: 20, bottom: 32),
+              child: Row(
+                children: List.generate(imageLinkAja.length, (index) {
+                  return Row(
+                    children: [
+                      index == 0
+                          ? SizedBox(width: GeneralVariables.defaultPadding)
+                          : SizedBox(width: 12),
+                      Container(
+                        width: 145,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(4),
+                          color: GeneralVariables.whiteColor,
+                          boxShadow: [
+                            BoxShadow(
+                              color:
+                              GeneralVariables.shadowColor.withOpacity(0.13),
+                              spreadRadius: 0,
+                              blurRadius: 16,
+                              offset: Offset(0, 2), // changes position of shadow
+                            ),
+                          ],
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              width: 145,
+                              height: 96,
+                              child: Image.asset(
+                                imageLinkAja[index],
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                            Container(
+                              padding: EdgeInsets.all(12),
+                              child: Text(textLinkAja[index],
+                                maxLines: 1,
+                                textAlign: TextAlign.left,
+                                style: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w500,
+                                    color: GeneralVariables.blackColor
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                      index == imageLinkAja.length - 1
+                          ? SizedBox(width: GeneralVariables.defaultPadding)
+                          : SizedBox(),
+                    ],
+                  );
+                }),
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.symmetric(
+                  horizontal: GeneralVariables.defaultPadding),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Cari Voucher, Yuk!",
+                    style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                        color: GeneralVariables.blackColor),
+                  ),
+                  Text(
+                    "Lihat Semua",
+                    style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                        color: GeneralVariables.primaryRedColor),
+                  ),
+                ],
+              ),
+            ),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              padding: EdgeInsets.only(top: 20, bottom: 32),
+              child: Row(
+                children: List.generate(imageVocer.length, (index) {
+                  return Row(
+                    children: [
+                      index == 0
+                          ? SizedBox(width: GeneralVariables.defaultPadding)
+                          : SizedBox(width: 12),
+                      Container(
+                        width: 248,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(4),
+                          color: GeneralVariables.whiteColor,
+                          boxShadow: [
+                            BoxShadow(
+                              color:
+                              GeneralVariables.shadowColor.withOpacity(0.13),
+                              spreadRadius: 0,
+                              blurRadius: 16,
+                              offset: Offset(0, 2), // changes position of shadow
+                            ),
+                          ],
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              width: 248,
+                              height: 112,
+                              child: Image.asset(
+                                imageVocer[index],
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                            Container(
+                              padding: EdgeInsets.all(12),
+                              child: Text(textVocer[index],
+                                maxLines: 1,
+                                textAlign: TextAlign.left,
+                                style: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w500,
+                                    color: GeneralVariables.blackColor
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                      index == imageVocer.length - 1
+                          ? SizedBox(width: GeneralVariables.defaultPadding)
+                          : SizedBox(),
+                    ],
+                  );
+                }),
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.symmetric(
+                  horizontal: GeneralVariables.defaultPadding),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Penawaran Khusus",
+                    style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                        color: GeneralVariables.blackColor),
+                  ),
+                  Text(
+                    "Lihat Semua",
+                    style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                        color: GeneralVariables.primaryRedColor),
+                  ),
+                ],
+              ),
+            ),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              padding: EdgeInsets.only(top: 20, bottom: 32),
+              child: Row(
+                children: List.generate(imagePenawaran.length, (index) {
+                  return Row(
+                    children: [
+                      index == 0
+                          ? SizedBox(width: GeneralVariables.defaultPadding)
+                          : SizedBox(width: 12),
+                      Container(
+                        width: 248,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(4),
+                          color: GeneralVariables.whiteColor,
+                          boxShadow: [
+                            BoxShadow(
+                              color:
+                              GeneralVariables.shadowColor.withOpacity(0.13),
+                              spreadRadius: 0,
+                              blurRadius: 16,
+                              offset: Offset(0, 2), // changes position of shadow
+                            ),
+                          ],
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              width: 248,
+                              height: 112,
+                              child: Image.asset(
+                                imagePenawaran[index],
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                            Container(
+                              padding: EdgeInsets.all(12),
+                              child: Text(textPenawaran[index],
+                                maxLines: 1,
+                                textAlign: TextAlign.left,
+                                style: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w500,
+                                    color: GeneralVariables.blackColor
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                      index == imagePenawaran.length - 1
+                          ? SizedBox(width: GeneralVariables.defaultPadding)
+                          : SizedBox(),
+                    ],
+                  );
+                }),
+              ),
+            ),
           ],
         ),
       ),
